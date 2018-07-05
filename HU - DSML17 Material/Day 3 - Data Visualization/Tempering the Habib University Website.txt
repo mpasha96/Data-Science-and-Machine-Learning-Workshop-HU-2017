@@ -1,0 +1,25 @@
+We tried to re-create an actual point, in the middle of the Habib University's homepage, from the famous Facebook Offerings visualization available on: http://www.nytimes.com/interactive/2012/05/17/business/dealbook/how-the-facebook-offering-compares.html?_r=0
+
+Choose the space by right clicking on any element on the webpage and inspect it in your JS console. We altered the 'homebar' for our datapoint. 
+
+1. Load D3 (use the instructions on the slide)
+
+2. Clear content from div in the chosen element: d3.select('.homebar').html('');
+
+3. Define svg variable and append it to the empty space you created in step 2: Input: var svg = d3.select('.homebar').append('svg')
+
+4. Make the y axis (choose the actual visualization scale reference): var y = d3.scale.log().domain([10000,1000000000]).range([150,0]);
+
+5. Do the same for the x axis: var x = d3.scale.linear().domain([0,40]).range([0,300]);
+
+6. As the area represents the value of the IPO, choose sqrt as your scale type for the circle's radius (Pi is a constant and can be ignored, so r=sqrt(A): var r = d3.scale.sqrt().domain([0,500000000]).range([0,15]);
+
+7. Go ahead and print out the exact position points using the actual data point to verify our result before actually putting it on the page:
+	//year: 2012(37th out of the 40 years visualized)
+	//value: $104 (approx $100 billion)
+	//Radius: sqrt(100000000)
+	console.log(y(100000000),x(37),r(1000000));
+VM6362:1 29.99999999999996 277.5 0.22360679774997896
+
+8. Go ahead and append the created point to your svg:
+svg.append('circle').attr('r',r(1000000000)).attr('fill','blue').attr('cx',x(37)).attr('cy',y(100000000));

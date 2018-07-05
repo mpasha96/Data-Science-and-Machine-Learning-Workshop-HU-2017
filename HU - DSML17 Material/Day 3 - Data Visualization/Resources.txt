@@ -1,0 +1,10 @@
+A very good blog to follow - Mike is the creator of D3.js :)
+https://bost.ocks.org/mike/bar/
+
+Pretty neat for filter charts: http://plnkr.co/edit/3a9emCPAEcVlR1o7YMg3?p=preview
+
+Worldcup Visualization:
+https://d17h27t6h515a5.cloudfront.net/topher/2016/September/57e9a59d_l1-worldcuptopscorers/l1-worldcuptopscorers.png
+
+decomposing complex graphic-the facebook offering (the visualization we used):
+http://www.nytimes.com/interactive/2012/05/17/business/dealbook/how-the-facebook-offering-compares.html?_r=0

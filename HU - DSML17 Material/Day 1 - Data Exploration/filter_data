@@ -1,0 +1,25 @@
+# Here we filter out data from test accounts
+def get_udacity_accounts(enrollment_data):
+    udacity_accounts = set()
+    for record in enrollment_data:
+        if record["is_udacity"]:
+            udacity_accounts.add(record["account_key"])
+    return udacity_accounts
+
+def remove_udacity_test_accounts(data, test_accounts):
+    filtered_data = list()
+    for record in data:
+        if record["account_key"] not in test_accounts:
+            filtered_data.append(record)
+    return filtered_data
+
+udacity_accounts = get_udacity_accounts(enrollments)
+non_udacity_enrollments = remove_udacity_test_accounts(enrollments, udacity_accounts)
+non_udacity_project_submissions = remove_udacity_test_accounts(project_submissions, udacity_accounts)
+non_udacity_daily_engagement = remove_udacity_test_accounts(daily_engagement, udacity_accounts)
+
+
+print(len(enrollments))
+print(len(non_udacity_enrollments))
+print(len(non_udacity_project_submissions))
+print(len(non_udacity_daily_engagement))

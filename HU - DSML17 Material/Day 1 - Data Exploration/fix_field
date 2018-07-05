@@ -1,0 +1,3 @@
+for record in daily_engagement:
+    record["account_key"] = record["acct"] 
+    del record["acct"]
